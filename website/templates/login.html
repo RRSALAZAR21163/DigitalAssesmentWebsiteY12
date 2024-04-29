@@ -1,6 +1,5 @@
 {% extends "template.html" %}
 {% block title %}Login{% endblock %}
-
 {% block content %} 
 
 <form method="POST">
@@ -19,18 +18,17 @@
 <br/>
 
 <div class="form-group">
-    <label for="password1">Password</label>
+    <label for="password">Password</label>
     <input
     type="password"
     class="form-control"
-    id="password1"
-    name="password1"
+    id="password"
+    name="password"
     placeholder="Enter password"
     />
 </div>
 
-<br/>
-<button type="submit" class="btn btn-primary">Login</button>
- 
-{{ text }}
+<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
 {% endblock %}
