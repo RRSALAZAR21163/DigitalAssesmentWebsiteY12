@@ -27,7 +27,7 @@
   <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
       <!-- Brand -->
-      <a class="navbar-brand" href="#">World of Dogs</a>
+      <a class="navbar-brand" href="/">World of Dogs</a>
         
       <!-- Toggler/collapsibe Button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -37,18 +37,24 @@
       <!-- Navbar links -->
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
+        {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li>
+        {% else %}
+          <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/signup">Signup</a>
+              <a class="nav-link" href="/signup">Signup</a>
           </li>
+        {% endif %}
         </ul>
       </div>
     </nav>
