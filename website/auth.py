@@ -18,6 +18,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash("Logged in successfully!", category='success')
                 login_user(user, remember=True)
+                return redirect(url_for('auth.dashboard'))
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
@@ -25,6 +26,10 @@ def login():
 
     return render_template("login.html", user=current_user)
 
+@auth.route("/dashboard", methods = ['GET', 'POST'])
+@login_required
+def dashboard():
+    return render_template("dashboard.html", user=current_user)
 
 
 @auth.route("/signup", methods = ['GET', 'POST'])
