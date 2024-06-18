@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block title %}Blogs{% endblock %}
+
+{% block content %} 
+<div class="container">
+
+    <h2>Blogs</h2> 
+        </br> 
+    <form method="POST">
+        <textarea name="text" id="text" class="form-control"></textarea>
+        <br />
+        <div align="center">
+        <button type="submit" class="btn btn-lg btn-primary">Post</button>
+        </div>
+</div>
+
+</br>
+<div align="center">
+    <a href="/blogs"><button type="button" class="btn btn-lg btn-secondary">Back</button></a>
+</div>
+{% endblock %}
