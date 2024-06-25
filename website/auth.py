@@ -2,9 +2,7 @@ from flask import Flask, Blueprint, render_template, redirect, url_for, request,
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 from .models import User
-from .models import Note
 from . import db
-import json
 
 auth = Blueprint("auth", __name__)
 
@@ -21,7 +19,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash("Logged in successfully!", category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('auth.dashboard'))
+                return redirect(url_for('views.dashboard'))
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
@@ -29,31 +27,6 @@ def login():
 
     return render_template("login.html", user=current_user)
 
-@auth.route("/dashboard", methods = ['GET', 'POST'])
-def dashboard():
-    if request.method == 'POST':
-        note = request.form.get('note') #Gets the note from the HTML
-        if len(note) < 1:
-            flash('Note is too short!', category='error')
-        else:
-            new_note = Note(data=note, user_id=current_user.id) #providing the schema for the note
-            db.session.add(new_note) #adding the note to the database
-            db.session.commit()
-            flash('Note added!', category='success')
-    return render_template("dashboard.html", user=current_user)
-
-@auth.route('/delete-note', methods=['POST'])
-def delete_note():
-    note = json.loads(request.data)
-    noteId = note['noteId']
-    note = Note.query.get(noteId)
-    if note:
-        if note.user_id == current_user.id:
-            db.session.delete(note)
-            db.session.commit()
-            #flash
-            flash('Note deleted!', category='success')
-    return jsonify({})
 
 @auth.route("/signup", methods = ['GET', 'POST'])
 def sign_up():
@@ -78,6 +51,7 @@ def sign_up():
             new_user = User(email=email, username=username, password = generate_password_hash(password1, method='scrypt:32768:8:1'))
             db.session.add(new_user)
             db.session.commit()
+            login_user(new_user, remember=True)
             flash('Account created!', category='success')
             return redirect(url_for('views.home'))
     
