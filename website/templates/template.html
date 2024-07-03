@@ -9,7 +9,8 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
       
       <!-- Core theme CSS (includes Bootstrap)-->
-      <link href="css/styles.css" rel="stylesheet" />
+          <!--STYLE SHEET FOR LAYOUT-->
+          <link href="static/css/styles.css" rel="stylesheet" />
       <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -57,61 +58,44 @@
     }
   </script>
 
-  <script>
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
-
-    // Get the navbar
-    var collapsibleNavbar = document.getElementById("collapsibleNavbar");
-
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetTop;
-
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-        }
-      }
-  </script>
+  	 <!-- JAVA SCRIPT FOR THE NAVIGATION BAR-->
+     <script type="text/javascript">
+      // When the user scrolls the page, execute myFunction
+       window.onscroll = function() {myFunction()};
+       
+       // Get the navbar
+       var navbar = document.getElementById("navbar");
+       var sticky = navbar.offsetTop;
+       
+       // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+       function myFunction() {
+       if (window.pageYOffset >= sticky) {
+         navbar.classList.add("sticky")
+       } else {
+         navbar.classList.remove("sticky");
+       }
+       }
+    </script>
 {% endblock %}
 
       <title> {% block title %}Home{% endblock  %} </title>
 
-  <style>
-        /*Footer positioning*/
-            footer {
-                bottom: 0;
-                margin-top: auto;
-                width: 100%;
-            }
-        /*Background image"/
-            body {
-            }
-            body{
-              min-height: 100vh;
-              display: flex;
-              flex-direction: column;
-          }
-                
-  </style>
+
   </head>
 
   <!-- BODY -->
   <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-md bg-info navbar-dark">
       <!-- Brand -->
       <a class="navbar-brand" href="/">World of Dogs</a>
         
       <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
           
       <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav">
         {% if user.is_authenticated %}
           <li class="nav-item">
@@ -142,7 +126,6 @@
     </div>
     </nav>
     
-
     
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -167,7 +150,7 @@
     {% endblock %}
     </div>     
 
-    <footer id="stickyfoot" class="flex-shrink-0 py-4 bg-dark text-white - 50"> 
+    <footer id="stickyfoot" class="flex-shrink-0 py-4 bg-info text-white - 50"> 
       <div class="container text-center">
         <small> &copy;COPYRIGHT Rodrich Salazar </small>
       </div>
