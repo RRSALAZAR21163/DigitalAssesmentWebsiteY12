@@ -36,7 +36,17 @@ body{
   display: flex;
   flex-direction: column;
 }
+h2{
+  color: #0cdceb;
+ }
 
+h3{
+  color: #0cdceb;
+ }
+
+h1{
+  color: #0cdceb;
+ }
 .navbar a:hover {
   background-color: #b6b2b27a;
   color: black;
@@ -54,15 +64,24 @@ body{
 }
 
 .containhome {
-  background-color: #1b6b6f;
+  background-color: #ffffff;
   border-radius: 50px; 
 }
 
 .homeheadings {
-  color: #fff;
+  color: #0cdceb;
   text-decoration: underline;
+  
 }
 
+.txtborder{
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 143, 153, 0.795);
+  border-bottom: none;
+  border-top: none;
+}
 .homepic {
   max-height: 450px;
   width: 100%;
