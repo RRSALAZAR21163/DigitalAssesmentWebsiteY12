@@ -49,6 +49,16 @@ def create_post():
     if request.method == "POST":
         text = request.form.get('text')
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if not text:
             flash('Post cannot be empty', category='error')
         else:
