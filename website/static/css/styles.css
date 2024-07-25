@@ -82,6 +82,7 @@ h1{
   border-bottom: none;
   border-top: none;
 }
+
 .homepic {
   max-height: 450px;
   width: 100%;
@@ -92,10 +93,57 @@ h1{
   color: white
 }
 
+.commenttxt {
+  color:#0cdceb;
+}
+
 .blogfooter {
   background-color: #0cdceb;
 }
 
 .blogbutton {
   background-color: #0cdceb;
+}
+
+.btndropdown {
+  border-width: 2px;
+  border-color: #89feff;
+  background: #ddffff;
+}
+
+.dashboardheading {
+  text-decoration: underline;
+}
+
+.navrightside {
+  float: right;
+}
+
+.navbar {
+  float: left;
+}
+
+.toplinedashboard {
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0cdceb;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+.underlinedashboard {
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0cdceb;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+/**Dark Mode Configs (Put on pause) **/ 
+.dark-mode {
+  background-color: black;
+  color: white;
 }

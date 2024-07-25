@@ -48,17 +48,6 @@ def blog():
 def create_post():
     if request.method == "POST":
         text = request.form.get('text')
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         if not text:
             flash('Post cannot be empty', category='error')
         else:
@@ -93,9 +82,8 @@ def posts(username):
     if not user:
         flash('No user with that username exists.', category='error')
         return redirect(url_for('views.home'))
-
     posts = user.posts
-    return render_template("posts.html", user=current_user, posts=posts, username=username)
+    return render_template("userposts.html", user=current_user, posts=posts, username=username)
 
 @views.route("/create-comment/<post_id>", methods=['POST'])
 @login_required

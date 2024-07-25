@@ -76,6 +76,16 @@
        }
        }
     </script>
+  <!-- JAVA SCRIPT for a dark/light mode feature-->
+    <!--(future) 
+      <script>
+      function myFunction() {
+         var element = document.body;
+         element.classList.toggle("dark-mode");
+      }
+    </script>
+    !-->
+
 {% endblock %}
 
       <title> {% block title %}Home{% endblock  %} </title>
@@ -121,8 +131,14 @@
             <a class="nav-link" href="/signup">| Signup |</a>
           </li>
           {% endif %}
-        </ul>
       </div>
+      <!--
+        Dark/light mode feature that is paused
+        <div class="navrightside">
+          <button class="btn btn-outline-light" onclick="myFunction()">Toggle dark mode</button>
+        </div>
+      !-->
+        </ul>
     </div>
     </nav>
     
