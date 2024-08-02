@@ -13,6 +13,7 @@ def home():
     return render_template("home.html", user=current_user)
 
 @views.route("/dashboard", methods = ['GET', 'POST'])
+
 def dashboard():
     if request.method == 'POST':
         note = request.form.get('note') #Gets the note from the HTML
@@ -39,6 +40,7 @@ def delete_note():
     return jsonify({})
 
 @views.route("/blogs", methods = ['GET', 'POST'])
+@login_required
 def blog():
     posts = Post.query.all()
     return render_template("blogs.html", user=current_user, posts=posts)
