@@ -14,9 +14,6 @@ class User(db.Model, UserMixin):
     comments = db.relationship('Comment', backref='user', passive_deletes=True)
     likes = db.relationship('Like', backref='user', passive_deletes=True)
     
-    #function to return a string when adds something
-    def __repr__(self):
-        return '<Name %r>' %self.id
     
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
