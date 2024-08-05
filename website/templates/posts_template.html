@@ -3,12 +3,19 @@
 {% block content%}
 
   <h1 align="center">{% block header %}Posts{% endblock %}</h1>
+  <!-- Contain makes the code in the middle. Restricts it in the middle/center of the page-->
 <div class="container">
+
+<!-- User Posts-->
   <div id="posts">
     {% for post in posts %}
     <div class="card border-dark">
       <div class="card-header text-white bg-info d-flex justify-content-between align-items-center">
+        <!-- User Author Link-->
+
         <a class="postslink" href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+
+        <!-- Like Button-->
         <div>
           <span id="likes-count-{{post.id}}">
             {{ post.likes|length }}</span> 
@@ -25,6 +32,8 @@
               onclick="like({{post.id}})"
             ></i>
            {% endif %}
+
+          <!-- User Posts Drop down Delete If user is 'Author'-->
           {% if user.id == post.author %}
           <div class="btn-group">
             <button
@@ -41,6 +50,8 @@
             {% endif %}
         </div>
       </div>
+
+      <!-- Comment feature -->
       <div class="card-body">
         <div class="card-text">{{post.text}}</div>
         <br />
@@ -106,6 +117,9 @@
     </div>
     <br/> {% endfor %}
   </div>
+
+  <!-- Creating a post button-->
+
   {% block footer %}
   <div align="center">
     <a href="/create-post">

@@ -1,21 +1,27 @@
 {% extends "template.html" %}
 {% block title %}Dashboard{% endblock %}
 
+<!-- Dash board page -->
 {% block content %} 
     <section>
+        <!-- Contain makes the code in the middle. Restricts it in the middle/center of the page-->
         <div class="container"/>
 
         <br/>
+        <!-- Main Title -->
         <h1 class="dashboardheading text-center"> This is the Dashboard Page </h1>
         <br/>
             <div class="card border-info">
         <div class="card-header bg-info mb- mb-3 text-white">
+            <!-- Displays username of the person logged in -->
             {{current_user.username}}
         </div>
         <div class="card-body bg-transparent">
             <h5 class="card-title text-info" >Welcome To Your User Dashboard
             </h5>
+            <!-- Display info -->
             <p class="card-text text-info">     
+                <!-- STRONG = MAKES IT STRONG/BOLD-->
                 <strong>Name:</strong> {{current_user.username}} </br>
                 <strong>User ID:</strong> {{current_user.id}} </br>
                 <strong>Email:</strong> {{current_user.email}} </br>
@@ -40,7 +46,9 @@
                     <textarea name="note" id="note" class="form-control formnote"></textarea>
                 </br>
                     <div class="underlinedashboard">
+                        <!--Create notes button -->
                         <button type="submit" align="left" class="btn btn-sm btn-info">Add Notes</button>
+                        <!-- Make logout button float to the right -->
                         <a href="{{ url_for('auth.logout')}}" style="float:right" class=" btn-light btn btn-outline-info btn-sm">Logout</a> 
                     </br>
                 </br>

@@ -4,6 +4,7 @@
 {% block title %}{{username}}'s Posts{% endblock %}
 
 {% block header %} {{username}}'s Posts {% endblock %}
+<!-- container -->
 <div class="container">
     {% block footer %} 
     <div align="center">
@@ -15,3 +16,24 @@
 </div>
     {% endblock %}
 
+    {% extends "userposts_template.html"%}
+
+
+    {% block title %}{{username}}'s Posts{% endblock %}
+    
+    {% block header %} {{username}}'s Posts {% endblock %}
+    <!-- Contain makes the code in the middle. Restricts it in the middle/center of the page-->
+    <div class="container">
+    
+        <!--Overrides the footer on userposts template to make it a back button instead of a create button-->
+        {% block footer %} 
+        <div align="center">
+            <a href="/blogs">
+                <button type="button" class="btn btn-primary btn-lg">Back</button>
+            </a>
+        </div>
+        </br>
+    </div>
+        {% endblock %}
+    
+    

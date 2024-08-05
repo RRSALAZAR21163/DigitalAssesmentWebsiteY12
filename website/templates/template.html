@@ -142,7 +142,7 @@
     </div>
     </nav>
     
-    
+    <!-- FLASH MESSAGES -->
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     {% for category, message in messages%}  {% if category =='error' %}
@@ -166,6 +166,7 @@
     {% endblock %}
     </div>     
 
+    <!-- FOOTER -->
     <footer id="stickyfoot" class="flex-shrink-0 py-4 bg-info text-white - 50"> 
       <div class="container text-center">
         <small> &copy;COPYRIGHT Rodrich Salazar </small>
