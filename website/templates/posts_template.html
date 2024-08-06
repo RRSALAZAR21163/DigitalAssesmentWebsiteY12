@@ -11,8 +11,8 @@
     {% for post in posts %}
     <div class="card border-dark">
       <div class="card-header text-white bg-info d-flex justify-content-between align-items-center">
-        <!-- User Author Link-->
 
+        <!-- User Author Link-->
         <a class="postslink" href="/posts/{{post.user.username}}">{{post.user.username}}</a>
 
         <!-- Like Button-->
@@ -98,6 +98,7 @@
           <small class="text-muted">No Comments</small>
           {% endif %}
         </p>
+        <!-- FORM -->
         <form
           class="input-group mb-3"
           method="POST"
